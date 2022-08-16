@@ -137,8 +137,15 @@ address {
 .contacts-nav .item + .item {
   margin-left: 30px;
 }
-.contacts-link {
+
+.contacts-nav .contacts-link {
+  display: flex;
+  gap: 10px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--paragraph-text-color);
+
   text-decoration: none;
   font-weight: 500;
   line-height: 1.14;
@@ -151,10 +158,8 @@ address {
   fill: var(--accent-color);
 }
 .primary-icon {
-  fill: var(--paragraph-text-color);
-}
-.primary-icon:hover {
-  fill: var(--accent-color);
+  align-self: center;
+  fill: currentColor;
 }
 /* Section */
 .section {
@@ -230,11 +235,12 @@ address {
 /* Features */
 .features-list {
   display: flex;
+  text-align: center;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .features-list .item {
   width: 270px;
-  justify-content: ;
 }
 .features-list .item + .item {
   margin-left: 30px;
@@ -260,42 +266,18 @@ address {
   margin-left: auto;
   margin-right: auto;
 }
-.antenna {
-  display: block;
+.icon-list {
+  display: flex;
   text-align: center;
-  padding: 25px;
+  justify-content: center;
   height: 120px;
   margin-bottom: 30px;
   background-color: var(--item-backgroung-color);
   background-size: 70px;
 }
-.clock {
-  display: block;
-  text-align: center;
-  padding: 25px;
-  height: 120px;
-  margin-bottom: 30px;
-  background-color: var(--item-backgroung-color);
-  background-size: 70px;
-}
-
-.diagram {
-  display: block;
-  text-align: center;
-  padding: 25px;
-  height: 120px;
-  margin-bottom: 30px;
-  background-color: var(--item-backgroung-color);
-  background-size: 70px;
-}
-.astronaut {
-  display: block;
-  text-align: center;
-  padding: 25px;
-  height: 120px;
-  margin-bottom: 30px;
-  background-color: var(--item-backgroung-color);
-  background-size: 70px;
+.icon-item {
+  display: flex;
+  align-self: center;
 }
 /* Works */
 .works-title {
@@ -327,17 +309,26 @@ address {
   background-color: var(--studio-background-color);
 }
 .team-title {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 10px;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 1.18;
   text-align: center;
-  margin-bottom: 10px;
 }
 .team-paragraph {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 16px;
+
   color: var(--paragraph-text-color);
+
   font-size: 16px;
   line-height: 1.18;
-  text-align: center;
 }
 .container-team {
   width: 1200px;
@@ -369,68 +360,41 @@ address {
 .social {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
 }
-.social-item {
-  display: inline-block;
-  text-align: center;
-  padding: 12px;
-  background-color: var(--primary-white-color);
+.social-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 44px;
   height: 44px;
+  margin-right: 10px;
+
+  background-color: var(--primary-white-color);
+
+  text-decoration: none;
   border-radius: 50%;
-  margin-top: 16px;
   cursor: pointer;
   color: var(--icon-primary-color);
 }
-.social-item:not(:nth-child(4n)) {
-  margin-right: 10px;
-}
-.social-item:hover,
-.social-item:focus {
+.social-items:hover,
+.social-items:focus {
   background-color: var(--accent-color);
-  color: var(--icon-primary-color);
+  color: var(--primary-white-color);
 }
-.icon-instagram {
+.social-items .social-icon {
+  display: flex;
   fill: currentColor;
   width: 20px;
   height: 20px;
-}
-.icon-instagram:hover,
-.icon-instagram:focus {
-  fill: var(--primary-white-color);
-}
-.icon-twitter {
-  fill: currentColor;
-  width: 20px;
-  height: 20px;
-}
-.icon-twitter:hover,
-.icon-twitter:focus {
-  fill: var(--primary-white-color);
-}
-.icon-facebook {
-  fill: currentColor;
-  width: 20px;
-  height: 20px;
-}
-.icon-facebook:hover,
-.icon-facebook:focus {
-  fill: var(--primary-white-color);
-}
-.icon-linkedin {
-  fill: currentColor;
-  width: 20px;
-  height: 20px;
-}
-.icon-linkedin:hover,
-.icon-linkedin:focus {
-  fill: var(--primary-white-color);
 }
 /* Portfolio */
 .portfolio {
   display: flex;
   flex-wrap: wrap;
+}
+.block {
 }
 .portfolio-item {
   width: calc((100% - 2 * 30px) / 3);
@@ -465,8 +429,11 @@ address {
   font-size: 16px;
   line-height: 1.87;
 }
-.card:hover,
-.card:focus {
+.block {
+  display: block;
+}
+.block:hover,
+.block:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -508,28 +475,30 @@ address {
 /* Clients */
 .clients-list {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .clients-item {
-  display: block;
+  display: flex;
+  justify-content: center;
   text-align: center;
-  padding: 16px 30px;
   min-width: 170px;
-  border: 1px solid #afb1b8;
-  border-radius: 4px;
   height: 92px;
+
+  color: var(--icon-primary-color);
+  border: 1px solid var(--icon-primary-color);
+  border-radius: 4px;
   cursor: pointer;
 }
-.clients-item:not(:nth-child(6n)) {
-  margin-right: 30px;
-}
 .clients-icon {
-  fill: var(--icon-primary-color);
+  fill: currentColor;
+  align-self: center;
 }
-.clients-icon:hover,
-.clients-icon:focus {
-  fill: var(--accent-color);
+.clients-item:hover,
+.clients-item:focus {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
 }
+
 /* Footer */
 .footer {
   background-color: var(--footer-backgroung-color);
@@ -585,14 +554,16 @@ address {
   color: var(--primary-white-color);
 }
 .social-item-footer {
-  display: inline-block;
+  display: flex;
   text-align: center;
-  padding: 12px;
-  background-color: var(--social-item-footer);
+  justify-content: center;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
   margin-top: 16px;
+
+  color: var(--primary-white-color);
+  background-color: var(--social-item-footer);
+  border-radius: 50%;
   cursor: pointer;
 }
 .social-item-footer:not(:nth-child(4n)) {
@@ -602,23 +573,10 @@ address {
 .social-item-footer:focus {
   background-color: var(--accent-color);
 }
-.instagram {
-  fill: var(--primary-white-color);
-  width: 20px;
-  height: 20px;
-}
-.twitter {
-  fill: var(--primary-white-color);
-  width: 20px;
-  height: 20px;
-}
-.facebook {
-  fill: var(--primary-white-color);
-  width: 20px;
-  height: 20px;
-}
-.linkedin {
-  fill: var(--primary-white-color);
+.item-icon {
+  align-self: center;
+  display: flex;
+  fill: currentColor;
   width: 20px;
   height: 20px;
 }
